@@ -1,0 +1,44 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --background: #F8F9FA;
+  --foreground: #2F3E46;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --background: #1A1B26;
+    --foreground: #F8F9FA;
+  }
+}
+
+body {
+  color: var(--foreground);
+  background: var(--background);
+  font-family: 'Inter', sans-serif;
+}
+
+@layer components {
+  .feature-card {
+    @apply bg-white dark:bg-neutral-dark rounded-lg shadow-sm border border-primary/10 dark:border-primary/20 transition-all duration-300 hover:shadow-md;
+  }
+  
+  .primary-button {
+    @apply bg-primary hover:bg-primary-dark text-white rounded-lg transition-all duration-300 transform hover:scale-102 active:scale-98;
+  }
+  
+  .secondary-button {
+    @apply bg-white dark:bg-neutral-dark hover:bg-slate-50 dark:hover:bg-neutral-darker text-primary dark:text-primary-light border-2 border-primary dark:border-primary-light rounded-lg transition-all duration-300;
+  }
+}
+
+.hide-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+
+.hide-scrollbar {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
